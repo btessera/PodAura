@@ -1,0 +1,32 @@
+touch .gitignore
+
+# Node.js
+node_modules/
+npm-debug.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Flask / Virtualenv
+venv/
+instance/
+*.db
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Environment files
+.env
+
+git add .gitignore
+git commit -m "Add .gitignore to exclude unnecessary files"
+git push
+
+git rm -r --cached node_modules
+git commit -m "Stop tracking node_modules"
+git push

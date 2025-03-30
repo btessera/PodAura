@@ -1,10 +1,13 @@
-// backend/routes/podcasts.js
 const express = require('express');
-const router = express.Router();
+const app = express();
+const podcastsRoutes = require('./routes/podcasts');
 
-// Sample route for getting podcasts
-router.get('/', (req, res) => {
-  res.send('List of podcasts');
+app.use(express.json()); // Enable JSON parsing if needed
+app.use('/podcasts', podcastsRoutes); // Use the podcasts routes
+
+app.get('/', (req, res) => {
+  res.send('Welcome to PodAura Backend!');
 });
 
-module.exports = router;
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
